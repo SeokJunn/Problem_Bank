@@ -1,0 +1,63 @@
+<body>
+<select onchange="categoryChange(this)" name="probType">
+  <option>응시 분야를 선택하세요</option>
+  <option value="기능/기술(기사)">기능/기술 [기사]</option>
+  <option value="영어">영어</option>
+  <option value="한자">한자</option>
+</select>
+ 
+<select id="good" onchange="categoryChange2(this)" name="subject">
+    <option>종목을 선택하세요</option>
+</select>
+    
+<select id="good2" name="probDate">
+    <option>회차를 선택하세요</option>
+</select>
+<script>
+    
+function categoryChange(e) {
+  var good_a = [" ", "정보처리기사"];
+    
+  var good_b = [" ", "영단어"];
+    
+  var good_c = [" ", "사자성어"];
+  var target = document.getElementById("good");
+ 
+  if(e.value == "기능/기술(기사)") var d = good_a;
+  else if(e.value == "영어") var d = good_b;
+  else if(e.value == "한자") var d = good_c;
+ 
+  target.options.length = 0;
+ 
+  for (x in d) {
+    var opt = document.createElement("option");
+    opt.value = d[x];
+    opt.innerHTML = d[x];
+    target.appendChild(opt);
+  } 
+}
+    
+function categoryChange2(e) {
+  var good_a = ["190303"];
+    
+  var good_b = ["중등1", "중등2"];
+    
+  var good_c = ["수능기출1", "수능기출2"];
+  var target = document.getElementById("good2");
+ 
+  if(e.value == "정보처리기사") var d = good_a;
+  else if(e.value == "영단어") var d = good_b;
+  else if(e.value == "사자성어") var d = good_c;
+ 
+  target.options.length = 0;
+ 
+  for (x in d) {
+    var opt = document.createElement("option");
+    opt.value = d[x];
+    opt.innerHTML = d[x];
+    target.appendChild(opt);
+  } 
+}
+
+    </script>
+    </body>
